@@ -1,0 +1,19 @@
+{
+  "name": "minecraft-clone",
+  "version": "1.0.0",
+  "description": "A Minecraft clone using noa-engine",
+  "main": "main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@babylonjs/core": "^6.1.0",
+    "noa-engine": "^0.33.0",
+    "three": "^0.160.0"
+  },
+  "devDependencies": {
+    "vite": "^4.0.0"
+  }
+} 

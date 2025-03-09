@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Clone</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            font-family: Arial, sans-serif;
+        }
+        #container {
+            width: 100%;
+            height: 100%;
+        }
+        #crosshair {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            margin-left: -10px;
+            margin-top: -10px;
+            pointer-events: none;
+        }
+        #crosshair::before, #crosshair::after {
+            content: "";
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        #crosshair::before {
+            width: 20px;
+            height: 2px;
+            top: 9px;
+            left: 0;
+        }
+        #crosshair::after {
+            width: 2px;
+            height: 20px;
+            top: 0;
+            left: 9px;
+        }
+        #inventory {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .inventory-slot {
+            width: 50px;
+            height: 50px;
+            margin: 0 5px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .inventory-slot.selected {
+            border-color: #ffff00;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        .block-icon {
+            width: 40px;
+            height: 40px;
+            image-rendering: pixelated;
+        }
+        #instructions {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+            max-width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <div id="crosshair"></div>
+    <div id="inventory"></div>
+    <div id="instructions">
+        <h3>Controls:</h3>
+        <p>WASD - Move</p>
+        <p>Space - Jump</p>
+        <p>Left Click - Break block</p>
+        <p>Right Click - Place block</p>
+        <p>1-5 - Select block</p>
+        <p>E - Toggle instructions</p>
+    </div>
+    
+    <!-- Import the main.js file as a module -->
+    <script type="module" src="/main.js"></script>
+</body>
+</html>
